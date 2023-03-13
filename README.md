@@ -1,6 +1,31 @@
 # sleepzz
 
-A new Flutter project.
+Widgets Used:
+- Text
+- Container
+- ClipRRect
+- Expanded
+- TimeToDatePicker
+- Datetotime converter
+- Spacer
+- Drawer
+- AppBar
+- SizedBox
+- ListView
+- ListTiles
+- GesturesDetector
+- Material Button
+- Image
+- FaIcons
+- Row
+- Column 
+
+Packages Used:
+- Animated Text Kit
+- Native Splash Screen
+- Google Fonts
+- Unil
+- launch Url
 
 ## Getting Started
 
