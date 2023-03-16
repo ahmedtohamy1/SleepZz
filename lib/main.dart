@@ -12,6 +12,8 @@ import 'package:url_launcher/url_launcher.dart';
 final Uri _urlWhy = Uri.parse('https://en.wikipedia.org/wiki/Sleep_cycle');
 final Uri _urlSite = Uri.parse('https://ahmedtohamy.tech/#about');
 final Uri _urlDonate = Uri.parse('https://ahmedtohamy.tech/#donate');
+final Uri _urlDownload =
+    Uri.parse('https://github.com/ahmedtohamy1/SleepZz/releases');
 
 extension DateTimeExtension on DateTime {
   DateTime applied(TimeOfDay time) {
@@ -63,24 +65,39 @@ class _SleepzzState extends State<Sleepzz> {
   String sixthCycle = 'A sleep cycle of 9h';
 
   Future<void> _launchUrlWhy() async {
-    LaunchMode.externalApplication;
-    if (!await launchUrl(_urlWhy)) {
+    if (!await launchUrl(
+      _urlWhy,
+      mode: LaunchMode.externalApplication,
+    )) {
       throw Exception('Could not launch $_urlWhy');
+    }
+  }
+
+  Future<void> _launchUrlDownload() async {
+    LaunchMode.externalApplication;
+    if (!await launchUrl(
+      _urlDownload,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw Exception('Could not launch $_urlDownload');
     }
   }
 
   Future<void> _launchUrlSite() async {
     LaunchMode.externalApplication;
-
-    if (!await launchUrl(_urlSite)) {
+    if (!await launchUrl(
+      _urlSite,
+      mode: LaunchMode.externalApplication,
+    )) {
       throw Exception('Could not launch $_urlSite');
     }
   }
 
   Future<void> _launchUrlDonate() async {
-    LaunchMode.externalApplication;
-
-    if (!await launchUrl(_urlDonate)) {
+    if (!await launchUrl(
+      _urlDonate,
+      mode: LaunchMode.externalApplication,
+    )) {
       throw Exception('Could not launch $_urlDonate');
     }
   }
@@ -134,7 +151,7 @@ class _SleepzzState extends State<Sleepzz> {
             ),
             GestureDetector(
               onTap: () {
-                _launchUrlSite();
+                _launchUrlDownload();
               },
               child: Container(
                 margin: EdgeInsets.all(10),
